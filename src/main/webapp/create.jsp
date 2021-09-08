@@ -15,7 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 <body>
-<form action="/Products" method="post">
+<form action="/Products?action=create" method="post">
     <input name="name" placeholder="name">
     <input name="price" placeholder="price" type="number">
     <input name="quantity" placeholder="quantity" type="number">
@@ -23,9 +23,10 @@
     <input name="description" placeholder="description">
     <select name="category">
         <c:forEach items="${category}" var="cate">
-            <option value="${cate}"></option>
+            <option value="${cate}">${cate}</option>
         </c:forEach>
     </select>
+    <button type="submit">Them moi</button>
 </form>
 </body>
 </html>
