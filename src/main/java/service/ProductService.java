@@ -130,15 +130,15 @@ public class ProductService {
         }
     }
 
-    public List<Product> selectByName() {
+    public List<Product> selectByName(String name) {
         List<Product> list = new ArrayList<>();
 
         try {
             PreparedStatement statement = connection.prepareStatement(SELECT_BY_NAME);
+            statement.setString(1,name);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id_pr");
-                String name = resultSet.getString("name_pr");
                 int price = resultSet.getInt("price");
                 int quantity = resultSet.getInt("quantity");
                 String color = resultSet.getString("color");

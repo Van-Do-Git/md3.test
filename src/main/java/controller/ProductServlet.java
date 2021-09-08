@@ -115,7 +115,8 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void search(HttpServletRequest request, HttpServletResponse response) {
-        List<Product> list = service.selectByName();
+        String name = request.getParameter("name");
+        List<Product> list = service.selectByName(name);
         request.setAttribute("products", list);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/products.jsp?action=");
         try {
