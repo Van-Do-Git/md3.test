@@ -53,7 +53,7 @@
                     <button>Sửa</button>
                 </a>
                 <a href="/Products?action=delete&id=${prd.id}">
-                    <button>Xóa</button>
+                    <button onclick="confirm('Ban co chac chan muon xoa khong?')">Xóa</button>
                 </a>
             </td>
         </tr>
