@@ -58,7 +58,7 @@ public class ProductService {
 
     public void save(Product product) {
         int id_cate;
-        if (product.getCategory() == "phone") {
+        if (product.getCategory().equals("phone")) {
             id_cate = 1;
         } else {
             id_cate = 2;
@@ -100,7 +100,7 @@ public class ProductService {
                 String color = resultSet.getString("color");
                 String description = resultSet.getString("description");
                 String category = resultSet.getString("name");
-                product = new Product(name, price, quantity, color, description, category);
+                product = new Product(id,name, price, quantity, color, description, category);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -110,7 +110,7 @@ public class ProductService {
 
     public void update(Product product) {
         int id_cate;
-        if (product.getCategory() == "phone") {
+        if (product.getCategory().equals("phone")) {
             id_cate = 1;
         } else {
             id_cate = 2;
